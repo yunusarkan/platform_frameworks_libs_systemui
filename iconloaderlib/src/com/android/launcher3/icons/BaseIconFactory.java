@@ -5,6 +5,7 @@ import static android.graphics.Paint.FILTER_BITMAP_FLAG;
 
 import static com.android.launcher3.icons.IconProvider.ICON_TYPE_DEFAULT;
 import static com.android.launcher3.icons.ShadowGenerator.BLUR_FACTOR;
+import static com.android.launcher3.icons.ShadowGenerator.ENABLE_SHADOWS;
 
 import static java.lang.annotation.RetentionPolicy.SOURCE;
 
@@ -117,6 +118,7 @@ public class BaseIconFactory implements AutoCloseable {
     public ShadowGenerator getShadowGenerator() {
         if (mShadowGenerator == null) {
             mShadowGenerator = new ShadowGenerator(mIconBitmapSize);
+            ENABLE_SHADOWS = IconPreferencesKt.shouldTransparentBGIcons(mContext);
         }
         return mShadowGenerator;
     }
