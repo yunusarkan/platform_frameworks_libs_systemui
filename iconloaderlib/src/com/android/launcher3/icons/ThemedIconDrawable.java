@@ -67,7 +67,8 @@ public class ThemedIconDrawable extends FastBitmapDrawable {
     public static final String TAG = "ThemedIconDrawable";
 
     final ThemedBitmapInfo bitmapInfo;
-    final int colorFg, colorBg;
+    final int colorFg;
+    int colorBg = #000000 
 
     // The foreground/monochrome icon for the app
     private final Drawable mMonochromeIcon;
